@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# TradeMaster Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app is the trading dashboard for TradeMaster. It focuses on the logged-in experience and includes a watchlist, holdings, positions, funds, orders, and lightweight charting components.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Portfolio summary screen
+- Market watchlist
+- Holdings and positions tables
+- Funds overview
+- Orders screen
+- Apps placeholder screen
+- Buy action modal
+- Doughnut chart and graph components
 
-### `npm start`
+## Routes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- `/` summary
+- `/orders` orders view
+- `/holdings` holdings view
+- `/positions` positions view
+- `/funds` funds view
+- `/apps` apps placeholder
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Stack
 
-### `npm test`
+- React 19
+- React Router DOM
+- Material UI
+- Chart.js
+- Axios
+- Create React App
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Run Locally
 
-### `npm run build`
+```powershell
+npm install
+$env:PORT=3001
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This runs the dashboard on `http://localhost:3001`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Build
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```powershell
+npm run build
+```
 
-### `npm run eject`
+## Data and API Notes
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Most of the displayed account and market data is currently mocked in `src/data/data.js`.
+- The buy modal sends a request to `http://localhost:3002/newOrder`.
+- No working backend is included in this app, so order placement needs a separate API service to function end-to-end.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Important Files
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```text
+dashboard/
+`-- src/
+    |-- components/
+    |   |-- Dashboard.js
+    |   |-- WatchList.js
+    |   |-- Summary.js
+    |   |-- Holdings.js
+    |   |-- Positions.js
+    |   |-- Funds.js
+    |   `-- BuyActionWindow.js
+    |-- data/
+    |   `-- data.js
+    `-- index.js
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Current Status
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- The dashboard UI builds successfully.
+- A few lint warnings still exist, including some unused imports and missing image alt text.
+- Some sections are placeholder-level and can be expanded once backend services are ready.
