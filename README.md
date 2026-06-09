@@ -20,6 +20,7 @@ The landing app contains the marketing and support pages for the platform, inclu
 - Support page
 - Signup placeholder
 - Custom not-found page
+- login page
 
 ### Dashboard
 
